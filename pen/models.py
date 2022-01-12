@@ -9,4 +9,7 @@ class Memo(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return self.body
+
 
