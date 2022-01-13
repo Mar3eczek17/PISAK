@@ -4,17 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Memo - Virtual Keyboard w/ HTML, CSS & JS</title>
-
     <link rel="shortcut icon" href="/assets/favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'pen/css/style.css'%}">
     <script src="{% static 'pen/js/script.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </head>
 <body>
     <form action="{% url 'pen:add_new_memo' %}" method="post">
         {% csrf_token %}
         <textarea name="memo_body" class="use-keyboard-input" cols="95" rows="20"></textarea>
         <button type="submit">Save the note</button>
+        <input value="q" class="buttons" id="0"/>
+        <input value="w" class="buttons" id="1"/>
+        <input value="e" class="buttons" id="2"/>
+        <input value="r" class="buttons" id="3"/>
+        <input value="t" class="buttons" id="4"/>
+        <input value="y" class="buttons" id="5"/>
+        <input value="u" class="buttons" id="6"/>
+        <input value="i" class="buttons" id="7"/>
     </form>
 </body>
 </html>
