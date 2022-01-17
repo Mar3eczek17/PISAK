@@ -4,12 +4,13 @@ from .models import Memo
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login
 
-# Create your views here.
+
 def memo(request):
     return render(
         request,
         'pen/memo.html'
     )
+
 
 def add_new_memo(request):
     if request.method == "POST":
@@ -17,6 +18,7 @@ def add_new_memo(request):
         memo.body = request.POST["memo_body"]
         memo.save()
         return redirect('pen:memo')
+
 
 def show_all_memos(request):
     memo = Memo.objects.all()
@@ -28,7 +30,7 @@ def show_all_memos(request):
         }
     )
 
-# Create your views here.
+
 def login_view(request):
 
     if request.method == "POST":
@@ -48,6 +50,7 @@ def login_view(request):
         "pen/login.html"
     )
 
+
 def home(request):
     if request.method == "POST":
         logout(request)
@@ -58,6 +61,7 @@ def home(request):
         'pen/home.html',
     )
 
+
 def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -67,7 +71,6 @@ def register(request):
         return redirect('pen:login-view')
 
     form = UserCreationForm()
-
 
     return render(
         request,
