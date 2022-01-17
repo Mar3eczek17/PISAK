@@ -10,11 +10,25 @@
     <script src="{% static 'pen/js/script.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+<!--    <script>-->
+<!--    function submittheform(){-->
+<!--        document.forms['form_id'].submit();-->
+<!--    }-->
+<!--</script>-->
+
 </head>
 <body>
-    <form action="{% url 'pen:add_new_memo' %}" method="post">
-        {% csrf_token %}
-        <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="20"></textarea>
+
+        <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
+            {% csrf_token %}
+            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="20"></textarea>
+            <input type="submit" value="zapisz" class="buttons" id="8"/>
+        </form>
+
+        <script type="text/javascript">
+
+        </script>
+
         <input value="q" class="buttons" id="0"/>
         <input value="w" class="buttons" id="1"/>
         <input value="e" class="buttons" id="2"/>
@@ -23,7 +37,14 @@
         <input value="y" class="buttons" id="5"/>
         <input value="u" class="buttons" id="6"/>
         <input value="i" class="buttons" id="7"/>
-        <input type="submit" value="zapisz" class="buttons" id="8"/>
-    </form>
+
+
+
+<!--    <form method="POST" id="form_id" action="someHandlerUrl">-->
+<!--        <input type="hidden" id="lan" value="" name="number"/>-->
+<!--        <input type="button" onclick="submittheform()" value="zapisz"/>-->
+<!--    </form>-->
+
+
 </body>
 </html>

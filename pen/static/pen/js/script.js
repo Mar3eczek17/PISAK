@@ -40,11 +40,15 @@ document.onclick= function(event) {
     var target= 'target' in event? event.target : event.srcElement;
 
 //    alert('clicked on '+target.tagName);
-    if (i!=-1) {
+    if (i!=-1 && i!=8) {
         var text = document.getElementById('my_console').value;
         var update_text = text + document.getElementById(i).value;
         document.getElementById('my_console').value = update_text;
 //        console.log(document.getElementById(i).value)
+    }
+
+    if (i==8) {
+        document.getElementById('jsform').submit();
     }
 };
 
