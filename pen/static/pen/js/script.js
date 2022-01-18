@@ -28,3 +28,7 @@ document.onclick= function(event) {
         document.getElementById('jsform').submit();
     }
 };
+
+function clearTextarea(){
+  $('#output').val("");
+}
