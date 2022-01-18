@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+    </head>
 <body>
 
         <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
@@ -20,8 +20,12 @@
 
         </form>
 
+        <form>
         <input value="zapisz" class="buttons" id="35"/>
-        <input value="wyczyść" class="buttons" onclick="clearTextarea()" id="36">
+        <input value="wyczyść" class="buttons" id="36">
+        <input value="cofnij" class="buttons" id="37"/>
+        </form>
+
         <input value="a" class="buttons" id="0"/>
         <input value="i" class="buttons" id="1"/>
         <input value="o" class="buttons" id="2"/>

@@ -3,11 +3,13 @@
     border: 3px solid black;
     font-weight: bold;
     background-color: red;
-    height: 55px;
+    height: 60px;
     width: 180px;
-    font-size: 35px;
+    font-size: 40px;
     text-align:center;
     border-radius: 20px;
+    border: none;
+    margin: 2px;
 }
 
 .highlighted
@@ -15,20 +17,24 @@
     border: 3px solid black;
     font-weight: bold;
     background-color: green;
-    height: 55px;
+    height: 60px;
     width: 180px;
-    font-size: 35px;
+    font-size: 40px;
     text-align:center;
     border-radius: 20px;
+    border: none;
+    margin: 2px;
 }
 
 .buttons {
     border: 3px solid black;
     font-weight: bold;
     background-color: green;
-    height: 55px;
+    height: 60px;
     width: 180px;
-    font-size: 35px;
+    font-size: 40px;
     text-align:center;
     border-radius: 20px;
+    border: none;
+    margin: 2px;
 }
