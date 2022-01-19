@@ -34,17 +34,14 @@ document.onclick= function(event) {
 
      if (i==36) {
         document.getElementById('my_console').value = "";
-
     }
 
     if (i==37) {
         var new_text = document.getElementById('my_console').value.slice(0, -1);
         document.getElementById('my_console').value = new_text;
-
     }
 
     document.getElementById(i).className = "highlighted";
     i = -1;
-
 };
 
