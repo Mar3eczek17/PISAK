@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Memo
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login
+from django.views.decorators.http import require_http_methods
 
 
 def memo(request):
@@ -11,13 +12,12 @@ def memo(request):
         'pen/memo.html'
     )
 
-
+@require_http_methods(["POST"])
 def add_new_memo(request):
-    if request.method == "POST":
-        memo = Memo()
-        memo.body = request.POST["memo_body"]
-        memo.save()
-        return redirect('pen:memo')
+    memo = Memo()
+    memo.body = request.POST["memo_body"]
+    memo.save()
+    return redirect('pen:memo')
 
 
 def show_all_memos(request):
@@ -32,7 +32,6 @@ def show_all_memos(request):
 
 
 def login_view(request):
-
     if request.method == "POST":
         data = request.POST
         user = authenticate(

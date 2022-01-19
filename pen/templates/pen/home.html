@@ -10,8 +10,8 @@
     <form method="POST">{% csrf_token %}
         <input type="submit" value="Wyloguj">
     </form>
-{% else %}
-<a href="{% url 'pen:login-view' %}"> <button>Zaloguj</button></a>
-{% endif %}
+    {% else %}
+        <a href="{% url 'pen:login-view' %}"> <button>Zaloguj</button></a>
+    {% endif %}
 </body>
 </html>
