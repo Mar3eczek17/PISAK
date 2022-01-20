@@ -12,6 +12,7 @@ def memo(request):
         'pen/memo.html'
     )
 
+
 @require_http_methods(["POST"])
 def add_new_memo(request):
     memo = Memo()
