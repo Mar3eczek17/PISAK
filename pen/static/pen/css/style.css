@@ -1,0 +1,79 @@
+.highlight
+{
+    border: 3px solid black;
+    font-weight: bold;
+    background-color: red;
+    height: 70px;
+    width: 200px;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    justify-content: center;
+    display: inline-block;
+    box-shadow: 5px 10px;
+}
+
+.highlighted
+{
+    border: 3px solid black;
+    font-weight: bold;
+    background-color: #00FF00;
+    height: 70px;
+    width: 200px;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    justify-content: center;
+    display: inline-block;
+    box-shadow: 5px 10px;
+}
+
+.buttons {
+    border: 3px solid black;
+    font-weight: bold;
+    background-color: #00FF00;
+    height: 70px;
+    width: 200px;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    margin: 3px;
+    justify-content: center;
+    display: inline-block;
+    box-shadow: 5px 10px;
+}
+
+.use-keyboard-input {
+    margin-top: 20px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 5px 10px;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.centering {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 3px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #0000FF;
+    border-radius: 50px;
+    box-shadow: 5px 10px;
+    height: 90px;
+    width: 700px;
+}
