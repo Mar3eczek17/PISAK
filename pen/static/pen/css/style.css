@@ -3,7 +3,7 @@
     border: 3px solid black;
     font-weight: bold;
     background-color: red;
-    height: 35px;
+    height: 32px;
     width: 120px;
     font-size: 28px;
     text-align: center;
@@ -19,7 +19,7 @@
     border: 3px solid black;
     font-weight: bold;
     background-color: #00FF00;
-    height: 35px;
+    height: 32px;
     width: 120px;
     font-size: 28px;
     text-align: center;
@@ -34,7 +34,7 @@
     border: 3px solid black;
     font-weight: bold;
     background-color: #00FF00;
-    height: 35px;
+    height: 32px;
     width: 120px;
     font-size: 28px;
     text-align: center;
@@ -73,4 +73,10 @@
     box-shadow: 5px 10px;
     height: 60px;
     width: 500px;
+}
+
+.button-secondary {
+    height: 40px;
+    width: 80px;
+    background: rgb(66, 184, 221);
 }

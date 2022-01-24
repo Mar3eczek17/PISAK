@@ -42,20 +42,10 @@ def login_view(request):
 
         if user:
             login(request, user=user)
-        return redirect('pen:home')
+        return redirect('pen:memo')
     return render(
         request,
         "pen/login.html"
-    )
-
-
-def home(request):
-    if request.method == "POST":
-        logout(request)
-        redirect('pen:home')
-    return render(
-        request,
-        'pen/home.html',
     )
 
 

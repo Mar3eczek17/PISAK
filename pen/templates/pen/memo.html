@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     </head>
 <body>
+
+<form method="POST">
+    {% if user.is_authenticated %}
+    Witaj {{ user }}!
+    <form method="POST">
+        {% csrf_token %}
+        <br>
+        <button type="submit" class="button-secondary"> <a href="{% url 'pen:login-view' %}"> Wyloguj </a> </button>
+    </form>
+    {% else %}
+    {% csrf_token %}
+        <button type="submit" class="button-secondary"> <a href="{% url 'pen:memo' %}"> Zaloguj </a> </button>
+    {% endif %}
+</form>
+
         <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
             {% csrf_token %}
             <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="14"></textarea>
@@ -57,5 +72,7 @@
                         <input value="cofnij" class="buttons" id="37"/>
                 </div>
         </form>
+
+
 </body>
 </html>
