@@ -11,7 +11,7 @@
 <body>
         <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
             {% csrf_token %}
-            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="20"></textarea>
+            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="14"></textarea>
         </form>
                 <div class="center">
                         <input value="a" class="buttons" id="0"/>

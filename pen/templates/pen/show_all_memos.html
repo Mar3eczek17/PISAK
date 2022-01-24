@@ -6,13 +6,11 @@
 </head>
 <body>
     <table>
-          {% if memo %}
           {% for m in memo %}
           <tr>
             <td>{{ m.body }}</td>
           </tr>
           {% endfor %}
-          {% endif %}
     </table>
 </body>
 </html>
