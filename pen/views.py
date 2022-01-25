@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .models import Memo
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.views.decorators.http import require_http_methods
 
@@ -17,6 +17,7 @@ def memo(request):
 def add_new_memo(request):
     memo = Memo()
     memo.body = request.POST["memo_body"]
+    memo.author = request.user
     memo.save()
     return redirect('pen:memo')
 

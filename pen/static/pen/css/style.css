@@ -5,7 +5,7 @@
     background-color: red;
     height: 32px;
     width: 120px;
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
     border-radius: 15px;
     margin: 3px;
@@ -21,7 +21,7 @@
     background-color: #00FF00;
     height: 32px;
     width: 120px;
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
     border-radius: 15px;
     margin: 3px;
@@ -36,7 +36,7 @@
     background-color: #00FF00;
     height: 32px;
     width: 120px;
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
     border-radius: 15px;
     margin: 3px;
@@ -71,12 +71,6 @@
     background-color: #0000FF;
     border-radius: 15px;
     box-shadow: 5px 10px;
-    height: 60px;
+    height: 57px;
     width: 500px;
-}
-
-.button-secondary {
-    height: 40px;
-    width: 80px;
-    background: rgb(66, 184, 221);
 }
