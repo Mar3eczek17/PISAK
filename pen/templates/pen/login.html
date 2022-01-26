@@ -5,10 +5,21 @@
     <title>Logowanie</title>
 </head>
 <body>
-    <form method="POST">{% csrf_token %}
-        <input type="text" name="user" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="submit" value="Zaloguj">
-    </form>
+    {% if request.user.is_authenticated %}
+
+        <form action="{% url 'pen:logout-view' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Wyloguj</button>
+        </form>
+
+    {% else %}
+
+        <form method="POST">{% csrf_token %}
+            <input type="text" name="user" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" value="Zaloguj">
+        </form>
+
+    {% endif %}
 </body>
 </html>

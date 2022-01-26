@@ -12,11 +12,11 @@
 
 <form method="POST">
     {% if user.is_authenticated %}
-    Witaj {{ user }}!
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit"><a href="{% url 'pen:login-view' %}">Wyloguj</a></button>
-    </form>
+    Witaj <strong> {{ user }} </strong>
+<!--    <form method="POST">-->
+<!--        {% csrf_token %}-->
+<!--        <button type="submit"><a href="{% url 'pen:login-view' %}">Wyloguj</a></button>-->
+<!--    </form>-->
     {% else %}
     {% csrf_token %}
         <button type="submit"><a href="{% url 'pen:memo' %}">Zaloguj</a></button>
@@ -25,7 +25,7 @@
 
         <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
             {% csrf_token %}
-            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="14"></textarea>
+            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="14">{{ body }}</textarea>
         </form>
                 <div class="center">
                         <input value="a" class="buttons" id="0"/>

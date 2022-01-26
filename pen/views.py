@@ -1,23 +1,36 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .models import Memo
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def memo(request):
+    author = request.user
+    memo = Memo.objects.filter(author_id=author.id).first()
+    body = memo.body if memo else ''
     return render(
         request,
-        'pen/memo.html'
+        'pen/memo.html',
+        context={
+            'body': body
+        }
     )
 
 
 @require_http_methods(["POST"])
 def add_new_memo(request):
-    memo = Memo()
-    memo.body = request.POST["memo_body"]
-    memo.author = request.user
+    author = request.user
+    memo = Memo.objects.filter(author_id=author.id).first()
+    if memo:
+        memo.body = request.POST["memo_body"]
+    else:
+        memo = Memo()
+        memo.body = request.POST["memo_body"]
+        memo.author = request.user
     memo.save()
     return redirect('pen:memo')
 
@@ -48,6 +61,13 @@ def login_view(request):
         request,
         "pen/login.html"
     )
+
+
+@login_required
+@require_http_methods(["POST"])
+def logout_view(request):
+    logout(request)
+    return redirect("pen:login-view")
 
 
 def register(request):
