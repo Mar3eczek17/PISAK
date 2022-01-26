@@ -15,7 +15,7 @@ function a() {
 document.onclick= function(event) {
 
    if (!start) {
-        setInterval(a, 500);
+        setInterval(a, 2000);
         start = true;
    }
 
