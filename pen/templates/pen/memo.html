@@ -9,53 +9,61 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     </head>
 <body>
-        <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
-            {% csrf_token %}
-            <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="20"></textarea>
-        </form>
-                <div class="center">
-                        <input value="a" class="buttons" id="0"/>
-                        <input value="i" class="buttons" id="1"/>
-                        <input value="o" class="buttons" id="2"/>
-                        <input value="e" class="buttons" id="3"/>
-                        <input value="z" class="buttons" id="4"/>
-                        <input value="n" class="buttons" id="5"/>
-                        <input value="r" class="buttons" id="6"/>
-                        <input value="w" class="buttons" id="7"/>
-                        <input value="s" class="buttons" id="8"/>
-                        <input value="t" class="buttons" id="9"/>
-                        <input value="c" class="buttons" id="10"/>
-                        <input value="y" class="buttons" id="11"/>
-                        <input value="k" class="buttons" id="12"/>
-                        <input value="d" class="buttons" id="13"/>
-                        <input value="p" class="buttons" id="14"/>
-                        <input value="m" class="buttons" id="15"/>
-                        <input value="u" class="buttons" id="16"/>
-                        <input value="j" class="buttons" id="17"/>
-                        <input value="l" class="buttons" id="18"/>
-                        <input value="ł" class="buttons" id="19"/>
-                        <input value="b" class="buttons" id="20"/>
-                        <input value="g" class="buttons" id="21"/>
-                        <input value="ę" class="buttons" id="22"/>
-                        <input value="h" class="buttons" id="23"/>
-                        <input value="ą" class="buttons" id="24"/>
-                        <input value="ó" class="buttons" id="25"/>
-                        <input value="ż" class="buttons" id="26"/>
-                        <input value="ś" class="buttons" id="27"/>
-                        <input value="ć" class="buttons" id="28"/>
-                        <input value="f" class="buttons" id="29"/>
-                        <input value="ń" class="buttons" id="30"/>
-                        <input value="q" class="buttons" id="31"/>
-                        <input value="ź" class="buttons" id="32"/>
-                        <input value="v" class="buttons" id="33"/>
-                        <input value="x" class="buttons" id="34"/>
-                </div>
-        <form>
-                <div class="centering">
-                        <input value="zapisz" class="buttons" id="35"/>
-                        <input value="wyczyść" class="buttons" id="36">
-                        <input value="cofnij" class="buttons" id="37"/>
-                </div>
-        </form>
+    <form method="POST">
+        {% if user.is_authenticated %}
+        Witaj <strong> {{ user }} </strong>
+        {% else %}
+        {% csrf_token %}
+            <button type="submit"><a href="{% url 'pen:memo' %}">Zaloguj</a></button>
+        {% endif %}
+    </form>
+    <form id="jsform" action="{% url 'pen:add_new_memo' %}" method="post">
+        {% csrf_token %}
+        <textarea name="memo_body" class="use-keyboard-input" id="my_console" cols="110" rows="14">{{ body }}</textarea>
+    </form>
+            <div class="center">
+                    <input value="a" class="buttons" id="0"/>
+                    <input value="i" class="buttons" id="1"/>
+                    <input value="o" class="buttons" id="2"/>
+                    <input value="e" class="buttons" id="3"/>
+                    <input value="z" class="buttons" id="4"/>
+                    <input value="n" class="buttons" id="5"/>
+                    <input value="r" class="buttons" id="6"/>
+                    <input value="w" class="buttons" id="7"/>
+                    <input value="s" class="buttons" id="8"/>
+                    <input value="t" class="buttons" id="9"/>
+                    <input value="c" class="buttons" id="10"/>
+                    <input value="y" class="buttons" id="11"/>
+                    <input value="k" class="buttons" id="12"/>
+                    <input value="d" class="buttons" id="13"/>
+                    <input value="p" class="buttons" id="14"/>
+                    <input value="m" class="buttons" id="15"/>
+                    <input value="u" class="buttons" id="16"/>
+                    <input value="j" class="buttons" id="17"/>
+                    <input value="l" class="buttons" id="18"/>
+                    <input value="ł" class="buttons" id="19"/>
+                    <input value="b" class="buttons" id="20"/>
+                    <input value="g" class="buttons" id="21"/>
+                    <input value="ę" class="buttons" id="22"/>
+                    <input value="h" class="buttons" id="23"/>
+                    <input value="ą" class="buttons" id="24"/>
+                    <input value="ó" class="buttons" id="25"/>
+                    <input value="ż" class="buttons" id="26"/>
+                    <input value="ś" class="buttons" id="27"/>
+                    <input value="ć" class="buttons" id="28"/>
+                    <input value="f" class="buttons" id="29"/>
+                    <input value="ń" class="buttons" id="30"/>
+                    <input value="q" class="buttons" id="31"/>
+                    <input value="ź" class="buttons" id="32"/>
+                    <input value="v" class="buttons" id="33"/>
+                    <input value="x" class="buttons" id="34"/>
+            </div>
+    <form>
+            <div class="centering">
+                    <input value="zapisz" class="buttons" id="35"/>
+                    <input value="wyczyść" class="buttons" id="36">
+                    <input value="cofnij" class="buttons" id="37"/>
+            </div>
+    </form>
 </body>
 </html>

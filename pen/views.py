@@ -4,19 +4,33 @@ from .models import Memo
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def memo(request):
+    author = request.user
+    memo = Memo.objects.filter(author_id=author.id).first()
+    body = memo.body if memo else ''
     return render(
         request,
-        'pen/memo.html'
+        'pen/memo.html',
+        context={
+            'body': body
+        }
     )
 
 
 @require_http_methods(["POST"])
 def add_new_memo(request):
-    memo = Memo()
-    memo.body = request.POST["memo_body"]
+    author = request.user
+    memo = Memo.objects.filter(author_id=author.id).first()
+    if memo:
+        memo.body = request.POST["memo_body"]
+    else:
+        memo = Memo()
+        memo.body = request.POST["memo_body"]
+        memo.author = request.user
     memo.save()
     return redirect('pen:memo')
 
@@ -42,21 +56,18 @@ def login_view(request):
 
         if user:
             login(request, user=user)
-        return redirect('pen:home')
+        return redirect('pen:memo')
     return render(
         request,
         "pen/login.html"
     )
 
 
-def home(request):
-    if request.method == "POST":
-        logout(request)
-        redirect('pen:home')
-    return render(
-        request,
-        'pen/home.html',
-    )
+@login_required
+@require_http_methods(["POST"])
+def logout_view(request):
+    logout(request)
+    return redirect("pen:login-view")
 
 
 def register(request):

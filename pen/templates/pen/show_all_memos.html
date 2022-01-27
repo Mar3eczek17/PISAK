@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CRUD</title>
+    <title>show_all_memos</title>
 </head>
 <body>
-    <table>
-          {% if memo %}
-          {% for m in memo %}
-          <tr>
-            <td>{{ m.body }}</td>
-          </tr>
-          {% endfor %}
-          {% endif %}
-    </table>
+<ol>
+    {% for m in memo %}
+    <li>
+        <tr>
+            <td>
+                {{ m.body }}
+            </td>
+            <strong>
+                {{ m.author.username }}
+            </strong>
+        </tr>
+    </li>
+    {% endfor %}
+</ol>
 </body>
 </html>
